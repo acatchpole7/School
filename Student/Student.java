@@ -1,13 +1,43 @@
 package week3.Student;
+import java.util.ArrayList;
 
 public class Student {
     public String name;
     public int IDnum;
     public static int nextID;
+    private ArrayList<Course> courses;
 
     public Student(String name, int IDnum) {
         this.name = name;
         this.IDnum = IDnum;
+        this.courses = new ArrayList<>();
+    }
+
+    public void addCourse(Course course) {
+        if (courses.contains(course)) {
+            System.out.println("This course is already in the list.");
+        }
+        else if (courses.size() >= 4) {
+            System.out.println("Cannot add more than 4 courses.");
+        }
+        else {
+            courses.add(course);
+            System.out.println("Course added successfully.");
+        }
+    }
+
+    public void removeCourse(Course course) {
+        if (courses.contains(course)) {
+            courses.remove(course);
+            System.out.println("Course removed successfully.");
+        }
+        else {
+            System.out.println("This course is not in the list.");
+        }
+    }
+
+    public ArrayList<Course> getCourses() {
+        return this.courses;
     }
 
     public Student(String name) {
@@ -16,7 +46,8 @@ public class Student {
     }
 
     public String toString() {
-        return(name + " has an ID number of " + IDnum);
+        return(name + " has an ID number of " + IDnum
+        + " and is taking" + "\n" + courses.toString());
     }
 
     public void NameChange(String newname) {
@@ -30,16 +61,5 @@ public class Student {
         else {
             return false;
         }
-    }
-
-    public static void main(String[] args) {
-        Student joe = new Student("Joe", 10);
-        System.out.println(joe);
-        Student max = new Student("Max", 11);
-        System.out.println(max);
-        Student jim = new Student("Jim", 12);
-        System.out.println(jim);
-        System.out.println(max.Tester(joe)); //false
-        System.out.println(joe.Tester(jim)); //true
     }
 }
