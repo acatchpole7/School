@@ -46,8 +46,19 @@ public class Student {
     }
 
     public String toString() {
-        return(name + " has an ID number of " + IDnum
-        + " and is taking" + "\n" + courses.toString());
+        if (courses.isEmpty()) {
+            return (name + " has an ID number of " + IDnum
+                    + "\n" + "Student is taking no classes.");
+        }
+        else if (courses.size() < 4) {
+            return (name + " has an ID number of " + IDnum
+                    + " and is taking" + "\n" + courses.toString()
+                    + "\n" + "Student load is not full time.");
+        }
+        else {
+            return name + " has an ID number of " + IDnum
+                    + " and is taking" + "\n" + courses.toString();
+        }
     }
 
     public void NameChange(String newname) {

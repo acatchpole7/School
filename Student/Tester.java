@@ -23,16 +23,48 @@ public class Tester {
             //course add/remove tester
             Student Mark = new Student("Mark", 21);
             Course course4 = new Course("Advanced JAVA", "310", "4");
+            Course course5 = new Course("Gym", "103", "4");
+            Course course6 = new Course("Web Development", "120", "4");
             System.out.println(Mark);
             Mark.addCourse(course1);
             Mark.addCourse(course2);
             Mark.addCourse(course3);
             Mark.addCourse(course4);
-//            System.out.println(Mark.getCourses());
-//            Mark.removeCourse(course1);
-//            System.out.println(Mark.getCourses());
+            Mark.addCourse(course5);
+            Mark.addCourse(course6);
+            System.out.println(Mark.getCourses());
+            Mark.removeCourse(course1);
+            Mark.removeCourse(course5);
+            System.out.println(Mark.getCourses());
 
-            System.out.println(Mark);
+            //new toString method
+            Student Fred = new Student("Fred", 19);
+            Course ex1 = new Course("Calculus", "121", "4");
+            Course ex2 = new Course("Art", "112", "4");
+            Course ex3 = new Course("Foundations 1", "100", "4");
+            Course ex4 = new Course("Psychology", "201", "4");
+            Fred.addCourse(ex1);
+            Fred.addCourse(ex2);
+            Fred.addCourse(ex3);
+            Fred.addCourse(ex4);
+            System.out.println(Fred);
+            Fred.removeCourse(ex1);
+            System.out.println(Fred);
+            Student Sally = new Student("Sally", 56);
+            System.out.println(Sally);
+
+            //workstudy tester
+            WorkstudyStudent Bob = new WorkstudyStudent("Bob", 33, 8);
+            Bob.addHours(4);
+            Bob.addCourse(ex1);
+            Bob.addCourse(course4);
+            Bob.addCourse(ex2);
+            System.out.println(Bob);
+
+            //variable testing
+            Student John = new WorkstudyStudent("John", 77, 9);
+            System.out.println(John);
+//            WorkstudyStudent Harold = new Student("Harold", 48);
 
         }
     }
