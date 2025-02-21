@@ -66,6 +66,11 @@ public class Tester {
             System.out.println(John);
 //            WorkstudyStudent Harold = new Student("Harold", 48);
 
+            //CG Course
+            CGCourse test = new CGCourse("Math", "191", "4", "West Des Moines");
+            Bob.addCourse(test);
+            System.out.println(Bob);
+
         }
     }
 

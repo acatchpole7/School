@@ -28,7 +28,7 @@ public class Course {
     public String toString() {
         return (department + " which has a course number of "
                 + coursenum + " and is " + credithours +
-                " credit hours." + "\n");
+                " credit hours.");
     }
 
     public boolean equals(Object obj) {
