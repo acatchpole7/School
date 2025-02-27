@@ -14,17 +14,17 @@ public class Tester {
             System.out.println(joe.Tester(jim)); //true
 
             //course builder
-            Course course1 = new Course("SQL 101", "255", "4");
-            Course course2 = new Course("SQL 101", "255", "4");
-            Course course3 = new Course("History", "121", "4");
+            Course course1 = new Course("SQL 101", "CMSC", 255, 4);
+            Course course2 = new Course("SQL 101", "CMSC", 255, 4);
+            Course course3 = new Course("History", "HIST", 121, 4);
             System.out.println(course1.equals(course2)); // true
             System.out.println(course2.equals(course3)); // false
 
             //course add/remove tester
             Student Mark = new Student("Mark", 21);
-            Course course4 = new Course("Advanced JAVA", "310", "4");
-            Course course5 = new Course("Gym", "103", "4");
-            Course course6 = new Course("Web Development", "120", "4");
+            Course course4 = new Course("Advanced JAVA", "CMSC", 310, 4);
+            Course course5 = new Course("Gym", "PE", 103, 4);
+            Course course6 = new Course("Web Development", "CMSC", 120, 4);
             System.out.println(Mark);
             Mark.addCourse(course1);
             Mark.addCourse(course2);
@@ -39,10 +39,10 @@ public class Tester {
 
             //new toString method
             Student Fred = new Student("Fred", 19);
-            Course ex1 = new Course("Calculus", "121", "4");
-            Course ex2 = new Course("Art", "112", "4");
-            Course ex3 = new Course("Foundations 1", "100", "4");
-            Course ex4 = new Course("Psychology", "201", "4");
+            Course ex1 = new Course("Calculus", "MATH", 121, 4);
+            Course ex2 = new Course("Art", "ART", 112, 4);
+            Course ex3 = new Course("Foundations 1", "FOUN", 100, 4);
+            Course ex4 = new Course("Psychology", "PSYC", 201, 4);
             Fred.addCourse(ex1);
             Fred.addCourse(ex2);
             Fred.addCourse(ex3);
@@ -67,10 +67,17 @@ public class Tester {
 //            WorkstudyStudent Harold = new Student("Harold", 48);
 
             //CG Course
-            CGCourse test = new CGCourse("Math", "191", "4", "West Des Moines");
+            CGCourse test = new CGCourse("test", "MATH", 191, 4, "West Des Moines");
             Bob.addCourse(test);
             System.out.println(Bob);
 
+            //test for more than 4 courses
+//            Student sam = new Student("Sam", 7);
+//            Course Math = new Course("Math", 213, 4);
+//            sam.addCourse(Math);
+//            Course Math2 = new Course("Math", 291, 4);
+//            sam.addCourse(Math2);
+//            System.out.println(sam);
         }
     }
 

@@ -3,8 +3,8 @@ package week3.Student;
 public class CGCourse extends Course{
     private String location;
 
-    public CGCourse (String department, String coursenum, String credithours, String location) {
-        super(department, coursenum, credithours);
+    public CGCourse (String courseName, String department, int coursenum, int credithours, String location) {
+        super(courseName, department, coursenum, credithours);
         this.location = location;
     }
 

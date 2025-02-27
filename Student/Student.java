@@ -2,9 +2,9 @@ package week3.Student;
 import java.util.ArrayList;
 
 public class Student {
-    public String name;
-    public int IDnum;
-    public static int nextID;
+    private String name;
+    private int IDnum;
+    private static int nextID;
     private ArrayList<Course> courses;
 
     public Student(String name, int IDnum) {
@@ -16,9 +16,6 @@ public class Student {
     public void addCourse(Course course) {
         if (courses.contains(course)) {
             System.out.println("This course is already in the list.");
-        }
-        else if (courses.size() >= 4) {
-            System.out.println("Cannot add more than 4 courses.");
         }
         else {
             courses.add(course);
