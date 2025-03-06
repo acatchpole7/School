@@ -59,7 +59,7 @@ public class Student {
             return name + " has an ID number of " + IDnum
                     +  ", is majoring in " + major
                     + ", and is taking" + "\n" + courses.toString()
-                    + "\n" + "Student load is not full time.";
+                    + "\n" + "Student load is full time.";
         }
     }
 

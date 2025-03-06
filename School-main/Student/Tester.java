@@ -111,6 +111,25 @@ public class Tester {
             boolean qualifes2 = cmsctest.qualifyForMajor(jeff.getCourses());
             System.out.println("Qualifies for CMSC Major: " + qualifes2); //true
 
+            //few courses in major
+            Student mike = new Student("Mike", 80, Math);
+            mike.addCourse(mathtest1);
+            mike.addCourse(mathtest3);
+            System.out.println(mike);
+            boolean qualifies3 = mathtest.qualifyForMajor(mike.getCourses());
+            System.out.println("Qualifies for Math major: " + qualifies3); //false
+
+            //many courses
+            Student grant = new Student("Grant", 450, CMSC);
+            grant.addCourse(cmsctest2);
+            grant.addCourse(cmsctest3);
+            grant.addCourse(cmsctest4);
+            grant.addCourse(mathtest1);
+            grant.addCourse(mathtest4);
+            System.out.println(grant);
+            boolean qualifies4 = cmsctest.qualifyForMajor(grant.getCourses());
+            System.out.println("Qualifies for CMSC Major: " + qualifies4); //true
+
         }
     }
 
