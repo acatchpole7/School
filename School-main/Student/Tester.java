@@ -3,16 +3,12 @@ package week3.Student;
 public class Tester {
 
         public static void main(String[] args) {
-            //major builder
-            Major Math = new Math();
-            Major CMSC = new CMSC();
-
             //student builder
-            Student joe = new Student("Joe", 10, Math);
+            Student joe = new Student("Joe", 10);
             System.out.println(joe);
-            Student max = new Student("Max", 11, Math);
+            Student max = new Student("Max", 11);
             System.out.println(max);
-            Student jim = new Student("Jim", 12, Math);
+            Student jim = new Student("Jim", 12);
             System.out.println(jim);
             System.out.println(max.Tester(joe)); //false
             System.out.println(joe.Tester(jim)); //true
@@ -25,7 +21,7 @@ public class Tester {
             System.out.println(course2.equals(course3)); // false
 
             //course add/remove tester
-            Student Mark = new Student("Mark", 21, CMSC);
+            Student Mark = new Student("Mark", 21);
             Course course4 = new Course("Advanced JAVA", "CMSC", 310, 4);
             Course course5 = new Course("Gym", "PE", 103, 4);
             Course course6 = new Course("Web Development", "CMSC", 120, 4);
@@ -42,7 +38,7 @@ public class Tester {
             System.out.println(Mark.getCourses());
 
             //new toString method
-            Student Fred = new Student("Fred", 19, Math);
+            Student Fred = new Student("Fred", 19);
             Course ex1 = new Course("Calculus", "MATH", 121, 4);
             Course ex2 = new Course("Art", "ART", 112, 4);
             Course ex3 = new Course("Foundations 1", "FOUN", 100, 4);
@@ -54,11 +50,11 @@ public class Tester {
             System.out.println(Fred);
             Fred.removeCourse(ex1);
             System.out.println(Fred);
-            Student Sally = new Student("Sally", 56, Math);
+            Student Sally = new Student("Sally", 56);
             System.out.println(Sally);
 
             //workstudy tester
-            WorkstudyStudent Bob = new WorkstudyStudent("Bob", 33, CMSC, 8);
+            WorkstudyStudent Bob = new WorkstudyStudent("Bob", 33, 8);
             Bob.addHours(4);
             Bob.addCourse(ex1);
             Bob.addCourse(course4);
@@ -66,7 +62,7 @@ public class Tester {
             System.out.println(Bob);
 
             //variable testing
-            Student John = new WorkstudyStudent("John", 77, Math, 9);
+            Student John = new WorkstudyStudent("John", 77, 9);
             System.out.println(John);
 //            WorkstudyStudent Harold = new Student("Harold", 48);
 
@@ -82,54 +78,6 @@ public class Tester {
 //            Course Math2 = new Course("Math", 291, 4);
 //            sam.addCourse(Math2);
 //            System.out.println(sam);
-
-            //test math major
-            Math mathtest = new Math();
-            Course mathtest1 = new Course("AdvAlgebra", "Math", 203, 4);
-            Course mathtest2 = new Course("Calc3", "Math", 258, 4);
-            Course mathtest3 = new Course("Linear", "Math", 321, 4);
-            Course mathtest4 = new Course("Angular", "Math", 344, 4);
-            Student james = new Student("James", 33, Math);
-            james.addCourse(mathtest1);
-            james.addCourse(mathtest2);
-            james.addCourse(mathtest3);
-            james.addCourse(mathtest4);
-            boolean qualifies = mathtest.qualifyForMajor(james.getCourses());
-            System.out.println("Qualifies for Math Major: " + qualifies); //true
-
-            //CMSC tester
-            CMSC cmsctest = new CMSC();
-            Course cmsctest2 = new Course("python", "CMSC", 209, 4);
-            Course cmsctest3 = new Course("java", "CMSC", 210, 4);
-            Course cmsctest4 = new Course("javascript", "CMSC", 311, 4);
-            Student jeff = new Student("Jeff", 400, CMSC);
-            jeff.addCourse(cmsctest2);
-            jeff.addCourse(cmsctest3);
-            jeff.addCourse(cmsctest4);
-            jeff.addCourse(mathtest3);
-            System.out.println(jeff);
-            boolean qualifes2 = cmsctest.qualifyForMajor(jeff.getCourses());
-            System.out.println("Qualifies for CMSC Major: " + qualifes2); //true
-
-            //few courses in major
-            Student mike = new Student("Mike", 80, Math);
-            mike.addCourse(mathtest1);
-            mike.addCourse(mathtest3);
-            System.out.println(mike);
-            boolean qualifies3 = mathtest.qualifyForMajor(mike.getCourses());
-            System.out.println("Qualifies for Math major: " + qualifies3); //false
-
-            //many courses
-            Student grant = new Student("Grant", 450, CMSC);
-            grant.addCourse(cmsctest2);
-            grant.addCourse(cmsctest3);
-            grant.addCourse(cmsctest4);
-            grant.addCourse(mathtest1);
-            grant.addCourse(mathtest4);
-            System.out.println(grant);
-            boolean qualifies4 = cmsctest.qualifyForMajor(grant.getCourses());
-            System.out.println("Qualifies for CMSC Major: " + qualifies4); //true
-
         }
     }
 

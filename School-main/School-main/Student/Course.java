@@ -2,7 +2,7 @@ package week3.Student;
 
 import java.util.Objects;
 
-public class Course implements Comparable<Course> {
+public class Course {
     private String coursename;
     private String department;
     private int coursenum;
@@ -47,14 +47,5 @@ public class Course implements Comparable<Course> {
         else {
             return false;
         }
-    }
-
-    public int compareTo(Course other) {
-        int deptComparison = this.department.compareTo(other.department);
-        if (deptComparison != 0) {
-            return deptComparison;
-        }
-
-        return Integer.compare(this.coursenum, other.coursenum);
     }
 }
