@@ -6,11 +6,13 @@ public class Student {
     private int IDnum;
     private static int nextID;
     private ArrayList<Course> courses;
+    private Major major;
 
-    public Student(String name, int IDnum) {
+    public Student(String name, int IDnum, Major major) {
         this.name = name;
         this.IDnum = IDnum;
         this.courses = new ArrayList<>();
+        this.major = major;
     }
 
     public void addCourse(Course course) {
@@ -45,16 +47,19 @@ public class Student {
     public String toString() {
         if (courses.isEmpty()) {
             return (name + " has an ID number of " + IDnum
+                    + " and is major in " + major
                     + "\n" + "Student is taking no classes.");
         }
         else if (courses.size() < 4) {
-            return (name + " has an ID number of " + IDnum
-                    + " and is taking" + "\n" + courses.toString()
+            return (name + " has an ID number of " + IDnum + ", is majoring in "
+                    + major + ", and is taking" + "\n" + courses.toString()
                     + "\n" + "Student load is not full time.");
         }
         else {
             return name + " has an ID number of " + IDnum
-                    + " and is taking" + "\n" + courses.toString();
+                    +  ", is majoring in " + major
+                    + ", and is taking" + "\n" + courses.toString()
+                    + "\n" + "Student load is full time.";
         }
     }
 

@@ -3,8 +3,8 @@ package week3.Student;
 public class WorkstudyStudent extends Student{
     private double hoursWorked;
 
-    public WorkstudyStudent (String name, int IDnum, double hoursWorked) {
-        super(name, IDnum);
+    public WorkstudyStudent (String name, int IDnum, Major major, double hoursWorked) {
+        super(name, IDnum, major);
         this.hoursWorked = hoursWorked;
     }
 
