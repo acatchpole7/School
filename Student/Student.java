@@ -1,5 +1,5 @@
 package week3.Student;
-import java.util.ArrayList;
+import java.util.*;
 
 public class Student {
     private String name;
@@ -38,6 +38,28 @@ public class Student {
     public ArrayList<Course> getCourses() {
         return this.courses;
     }
+
+    public static double getAverageScore(Map<Student, Map<Course, Double>> gradebook, Student student) {
+        if (!gradebook.containsKey(student)) {
+            System.out.println(student + " is not in the gradebook.");
+            return -1.0;
+        }
+
+        Map<Course, Double> studentScores = gradebook.get(student);
+        if (studentScores.isEmpty()) {
+            System.out.println(student + " has no recorded scores.");
+            return 0.0;
+        }
+
+        double totalScore = 0.0;
+        int count = 0;
+        for (double score : studentScores.values()) {
+            totalScore += score;
+            count++;
+        }
+        return totalScore / count;
+    }
+
 
     public Student(String name) {
         this.name = name;
